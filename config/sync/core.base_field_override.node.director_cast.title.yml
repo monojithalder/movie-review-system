@@ -1,0 +1,18 @@
+uuid: 6d169196-b530-4c59-8677-c104e0432fd2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.director_cast
+id: node.director_cast.title
+field_name: title
+entity_type: node
+bundle: director_cast
+label: Name
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,39 @@
+uuid: 19801c06-f155-44af-8c5a-d2faa4dae01e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.production.field_description
+    - field.field.node.production.field_production_logo
+    - node.type.production
+  module:
+    - image
+    - text
+    - user
+id: node.production.default
+targetEntityType: node
+bundle: production
+mode: default
+content:
+  field_description:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_production_logo:
+    weight: 102
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

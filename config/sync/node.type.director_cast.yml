@@ -1,0 +1,17 @@
+uuid: b4aab606-d887-489b-82b4-9b66560c150d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Director/Cast
+type: director_cast
+description: ''
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: true

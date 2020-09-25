@@ -1,0 +1,23 @@
+uuid: 446b7a47-3785-4eba-8d73-501b4b3b9da4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_banner
+    - paragraphs.paragraphs_type.movie_image
+id: paragraph.movie_image.field_banner
+field_name: field_banner
+entity_type: paragraph
+bundle: movie_image
+label: Banner
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

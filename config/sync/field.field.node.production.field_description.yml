@@ -1,0 +1,21 @@
+uuid: 4927f7bd-cbc3-492c-b77b-8600c77d89d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.production
+  module:
+    - text
+id: node.production.field_description
+field_name: field_description
+entity_type: node
+bundle: production
+label: Description
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,24 @@
+uuid: bfc10a29-5e60-4f2f-ac5b-60bfacb640d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.director_cast.field_director_cast_description
+    - field.field.node.director_cast.field_director_cast_image
+    - node.type.director_cast
+  module:
+    - user
+id: node.director_cast.teaser
+targetEntityType: node
+bundle: director_cast
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_director_cast_description: true
+  field_director_cast_image: true

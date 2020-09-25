@@ -1,0 +1,95 @@
+uuid: 23acddbc-b1df-4014-aed1-e539a11fcdfd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.movie.field_cast
+    - field.field.node.movie.field_director
+    - field.field.node.movie.field_genre
+    - field.field.node.movie.field_movie_description
+    - field.field.node.movie.field_movie_image_paragraph
+    - field.field.node.movie.field_movie_video
+    - field.field.node.movie.field_production
+    - field.field.node.movie.field_release_date
+    - node.type.movie
+  module:
+    - datetime
+    - entity_reference_revisions
+    - text
+    - user
+id: node.movie.default
+targetEntityType: node
+bundle: movie
+mode: default
+content:
+  field_cast:
+    weight: 107
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_director:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_genre:
+    weight: 109
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_movie_description:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_movie_image_paragraph:
+    type: entity_reference_revisions_entity_view
+    weight: 105
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_movie_video:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_production:
+    weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_release_date:
+    weight: 104
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

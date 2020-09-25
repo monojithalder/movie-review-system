@@ -1,0 +1,22 @@
+uuid: 8e6e4dee-865c-4cbb-8e23-b1060a425b31
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - bootstrap_mint
+_core:
+  default_config_hash: EW87SBr4WSSY6DYZ3iHs5Xdj0zXbaU2TiAZoky9erpo
+id: bootstrap_mint_powered
+theme: bootstrap_mint
+region: optional_blocks
+weight: 2
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

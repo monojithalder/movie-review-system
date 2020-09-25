@@ -1,0 +1,38 @@
+uuid: e3a0387b-2bd4-452a-be69-eda3b5e17bcf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.director_cast.field_director_cast_description
+    - field.field.node.director_cast.field_director_cast_image
+    - node.type.director_cast
+  module:
+    - image
+    - user
+id: node.director_cast.default
+targetEntityType: node
+bundle: director_cast
+mode: default
+content:
+  field_director_cast_description:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_director_cast_image:
+    weight: 101
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

@@ -1,0 +1,24 @@
+uuid: 037d410e-9337-478b-ae9d-47f36cd57a8e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.production.field_description
+    - field.field.node.production.field_production_logo
+    - node.type.production
+  module:
+    - user
+id: node.production.teaser
+targetEntityType: node
+bundle: production
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_description: true
+  field_production_logo: true

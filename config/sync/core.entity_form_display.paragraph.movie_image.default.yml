@@ -1,0 +1,34 @@
+uuid: e51f4cbb-3d28-467a-99b8-23ddb12f188d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.movie_image.field_banner
+    - field.field.paragraph.movie_image.field_movie_image
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.movie_image
+  module:
+    - image
+id: paragraph.movie_image.default
+targetEntityType: paragraph
+bundle: movie_image
+mode: default
+content:
+  field_banner:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_movie_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+hidden:
+  created: true
+  status: true

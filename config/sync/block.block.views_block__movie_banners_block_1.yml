@@ -1,0 +1,30 @@
+uuid: 8e722c42-ed98-4ba2-8945-3005e92b2ff6
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.movie_banners
+  module:
+    - system
+    - views
+  theme:
+    - movie
+id: views_block__movie_banners_block_1
+theme: movie
+region: highlighted
+weight: 0
+provider: null
+plugin: 'views_block:movie_banners-block_1'
+settings:
+  id: 'views_block:movie_banners-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,31 @@
+uuid: f09d4b04-64be-4bfd-9931-ba5a019a60e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_movie_image_paragraph
+    - node.type.movie
+    - paragraphs.paragraphs_type.movie_image
+  module:
+    - entity_reference_revisions
+id: node.movie.field_movie_image_paragraph
+field_name: field_movie_image_paragraph
+entity_type: node
+bundle: movie
+label: 'Movie Image Paragraph'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      movie_image: movie_image
+    target_bundles_drag_drop:
+      movie_image:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

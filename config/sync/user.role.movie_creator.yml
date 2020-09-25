@@ -1,0 +1,20 @@
+uuid: 4bce9c15-7719-4488-ac7e-7ad1a6529761
+langcode: en
+status: true
+dependencies: {  }
+id: movie_creator
+label: 'Movie Creator'
+weight: 3
+is_admin: null
+permissions:
+  - 'create director_cast content'
+  - 'create movie content'
+  - 'create production content'
+  - 'delete own director_cast content'
+  - 'delete own movie content'
+  - 'delete own production content'
+  - 'edit own director_cast content'
+  - 'edit own movie content'
+  - 'edit own production content'
+  - 'flag bookmark'
+  - 'unflag bookmark'
