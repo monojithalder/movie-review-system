@@ -1,0 +1,5 @@
+name: 'Views General'
+type: module
+description: 'This module is Used for views related work'
+core: 8.x
+package: 'Custom'

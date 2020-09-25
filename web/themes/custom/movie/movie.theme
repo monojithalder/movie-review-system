@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the movie_review theme.
+ */
+use Drupal\paragraphs\Entity\Paragraph;
+/**
+ * Implements hook_preprocess_node().
+ */
+function movie_review_preprocess_node(array &$variables) {
+  $a = 0;
+  $node = $variables['node'];
+  $type = $node->getType();
+  if($type == "movie") {
+    $banner_picture = "";
+    $other_pictures = array();
+    $image_paragraphs = $node->get("field_movie_image_paragraph")->getValue();
+    foreach ($image_paragraphs as $item) {
+      $paragraph_id = $item['target_id'];
+      $paragraph = Paragraph::load($paragraph_id);
+      $banner = $paragraph->field_banner->value;
+      if($banner == true) {
+        $image_id = $paragraph->field_movie_image->target_id;
+        $image_file = \Drupal\file\Entity\File::load($image_id);
+        $image_file_uri = $image_file->getFileUri();
+        $image_file_uri = str_replace("public://","/sites/default/files/",$image_file_uri);
+        $banner_picture = $image_file_uri;
+      }
+      else {
+        $image_id = $paragraph->field_movie_image->target_id;
+        $image_file = \Drupal\file\Entity\File::load($image_id);
+        $image_file_uri = $image_file->getFileUri();
+        $image_file_uri = str_replace("public://","/sites/default/files/",$image_file_uri);
+        $other_pictures[] = $image_file_uri;
+      }
+    }
+    $variables['video'] = "";
+    if(!$node->get("field_movie_video")->isEmpty()) {
+      $variables['video'] = $node->get("field_movie_video")->getValue()[0]['value'];
+    }
+    $variables['banner_image'] = $banner_picture;
+    $variables['other_images'] = $other_pictures;
+  }
+}
+

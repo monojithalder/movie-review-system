@@ -1,0 +1,10 @@
+name: Movie Review
+type: theme
+base theme: bootstrap_mint
+description: 'This is sub theme of bootstap mint them'
+package: Other
+core: 8.x
+libraries:
+  - movie/global-styling-and-scripts
+ 
+

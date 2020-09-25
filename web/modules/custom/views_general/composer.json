@@ -1,0 +1,13 @@
+{
+    "name": "views_general",
+    "type": "drupal-module",
+    "description": "This module is Used for views related work",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/views_general",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/views_general",
+        "source": "http://cgit.drupalcode.org/views_general",
+    },
+}

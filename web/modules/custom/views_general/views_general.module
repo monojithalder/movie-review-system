@@ -1,0 +1,74 @@
+<?php
+
+/**
+ * @file
+ * Contains views_general.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function views_general_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the views_general module.
+    case 'help.page.views_general':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This module is Used for views related work') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function views_general_theme() {
+  return [
+    'views_general' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+function views_general_views_data() {
+  $data = [];
+  // Base data.
+  $data['manage_account']['table']['group'] = t('Manage Account');
+  $data['manage_account']['table']['base'] = [
+    'title' => t('Manage Account'),
+    'help' => t('This is used for manage account'),
+  ];
+  $data['manage_account']['id'] = [
+    'title' => t('ID'),
+    'help' => t('Transaction ID.'),
+    'field' => [
+      'id' => 'standard',
+    ],
+  ];
+  $data['manage_account']['account_type'] = [
+    'title' => t('Account Type'),
+    'help' => t('Account Type'),
+    'field' => [
+      'id' => 'standard',
+    ],
+  ];
+  $data['manage_account']['transaction_type'] = [
+    'title' => t('Transaction Type'),
+    'help' => t('Transaction Type'),
+    'field' => [
+      'id' => 'standard',
+    ],
+  ];
+  $data['manage_account']['amount'] = [
+    'title' => t('Amount'),
+    'help' => t('Amount'),
+    'field' => [
+      'id' => 'standard',
+    ],
+  ];
+  return $data;
+}
+

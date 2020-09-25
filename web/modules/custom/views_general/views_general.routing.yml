@@ -1,0 +1,17 @@
+views_general.test_form:
+  path: '/views_general/form/test'
+  defaults:
+    _form: '\Drupal\views_general\Form\TestForm'
+    _title: 'TestForm'
+  requirements:
+    _role: "Anonymous user"
+
+views_general.test_controller_test:
+  path: '/views_general/test'
+  defaults:
+    _controller: '\Drupal\views_general\Controller\TestController::test'
+    _title: 'Testing Method'
+  options:
+    no_cache: TRUE
+  requirements:
+    _permission: 'access content'

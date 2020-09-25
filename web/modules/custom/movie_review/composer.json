@@ -1,0 +1,13 @@
+{
+    "name": "movie_review",
+    "type": "drupal-module",
+    "description": "This module is used for movie review functionality",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/movie_review",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/movie_review",
+        "source": "http://cgit.drupalcode.org/movie_review",
+    },
+}

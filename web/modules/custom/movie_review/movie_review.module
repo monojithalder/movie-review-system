@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @file
+ * Contains movie_review.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function movie_review_theme() {
+  return [
+    'popup_block' => array(
+      'variables' => array('data' => NULL),
+      'template' => 'block--popup-block',
+    )
+   ];
+}
+
+
+/**
+ * Implements hook_FORM_Id_Alter().
+ */
+function movie_review_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if($form_id == "node_movie_edit_form" || $form_id == "node_movie_form") {
+    $form['#validate'][] = 'movie_review_movie_node_validate';
+  }
+}
+
+function movie_review_movie_node_validate($form, FormStateInterface &$form_state) {
+  $movie_images = $form_state->getValue('field_movie_image_paragraph');
+  unset($movie_images['add_more']);
+  $banner_count = 0;
+  foreach ($movie_images as $movie_image) {
+    if($movie_image['subform']['field_banner']['value'] == 1) {
+      $banner_count++;
+    }
+  }
+  if($banner_count > 1) {
+    $form_state->setErrorByName("field_movie_image_paragraph","Sorry! You can not select more than 1 banner image");
+  }
+}
+
+function movie_review_views_data_alter(array &$data) {
+  $data['views']['movie_link'] = [
+    'title' => t('Movie Link'),
+    'field' => [
+      'title' => t('Movie Link'),
+      'help' => t('This is for get movie link'),
+      'id' => 'movie_link',
+    ],
+  ];
+}

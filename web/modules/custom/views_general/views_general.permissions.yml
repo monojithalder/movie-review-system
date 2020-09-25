@@ -1,0 +1,4 @@
+access all views:
+  title: 'My module settings'
+  description: 'A custom permission for your module settings page.'
+  restrict access: TRUE
