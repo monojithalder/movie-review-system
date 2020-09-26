@@ -72,8 +72,6 @@ class PopupConfigForm extends ConfigFormBase {
         '#title' => t('Main Body'),
         '#default_value' => (isset($popup_data[$i])) ? $popup_data[$i]['main_body'] : ""
       ];
-      $image_file = \Drupal\file\Entity\File::load(16);
-      $image_file_uri = $image_file->getFileUri();
       $form['names_fieldset']['display_fieldset_'.$i]['popup_image'] = [
           '#type' => 'managed_file',
           '#title' => t('PopUp Image'),

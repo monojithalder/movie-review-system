@@ -22,8 +22,11 @@ class PopupBlock extends BlockBase {
     foreach ($popup_data as $key => $popup_datum) {
       $image_id = $popup_datum['popup_image'][0];
       $image_file = \Drupal\file\Entity\File::load($image_id);
-      $image_file_uri = $image_file->getFileUri();
-      $image_file_uri = str_replace("public://","/sites/default/files/",$image_file_uri);
+      $image_file_uri = "";
+      if(empty(!$image_file)) {
+        $image_file_uri = $image_file->getFileUri();
+        $image_file_uri = str_replace("public://", "/sites/default/files/", $image_file_uri);
+      }
       $popup_data[$key]['popup_image'] = $image_file_uri;
     }
     return array(

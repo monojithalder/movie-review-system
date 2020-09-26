@@ -28,6 +28,7 @@ class MovieReviewController extends ControllerBase {
       ]
     ];
     $title = \Drupal::request()->query->get('title');
+    $actor = \Drupal::request()->query->get('actor');
     $storage = \Drupal::entityTypeManager()->getStorage('node');
 
     $query = $storage->getQuery();
@@ -36,6 +37,21 @@ class MovieReviewController extends ControllerBase {
     if(!empty($title)) {
       $query->condition('title',$title,'CONTAINS');
       //$query->condition("test_filed","sdfds",'CONTAINS');
+    }
+    if(!empty($actor)) {
+      $actor_query = $storage->getQuery();
+      $actor_query->condition('status', \Drupal\node\NodeInterface::PUBLISHED);
+      $actor_query->condition('type', 'director_cast');
+      $actor_query->condition('title',$actor,'CONTAINS');
+      $node_ids = $actor_query->execute();
+      $actor_ids = array();
+      if(!empty($node_ids)) {
+        $actor_ids = array_values($node_ids);
+      }
+      else {
+        $actor_ids = array(0);
+      }
+      $query->condition('field_cast',$actor_ids,'IN');
     }
     $query->pager(1);
     $nids = $query->execute();

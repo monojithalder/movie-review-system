@@ -22,6 +22,7 @@ class MovieSearchForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $title = \Drupal::request()->query->get('title');
+    $actor = \Drupal::request()->query->get('actor');
     $form['filters'] = [
       '#type'  => 'fieldset',
       '#title' => $this->t('Filter'),
@@ -34,6 +35,13 @@ class MovieSearchForm extends FormBase {
     ];
     if(!empty($title)) {
       $form['filters']['title']['#default_value'] = $title;
+    }
+    $form['filters']['actor'] = [
+      '#title'         => 'Actor/Cust Name',
+      '#type'          => 'search'
+    ];
+    if(!empty($actor)) {
+      $form['filters']['actor']['#default_value'] = $actor;
     }
     $form['filters']['actions'] = [
       '#type'       => 'actions'
@@ -65,8 +73,9 @@ class MovieSearchForm extends FormBase {
     // Display result.
     $field = $form_state->getValues();
     $title = $field["title"];
+    $actor = $field["actor"];
     $url = \Drupal\Core\Url::fromRoute('movie_review.movie_review_controller_search_movie')
-      ->setRouteParameters(array('title'=>$title));
+      ->setRouteParameters(array('title'=>$title,'actor' => $actor));
     $form_state->setRedirectUrl($url);
   }
 
