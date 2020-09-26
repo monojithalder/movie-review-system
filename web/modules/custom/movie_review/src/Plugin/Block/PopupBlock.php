@@ -19,6 +19,9 @@ class PopupBlock extends BlockBase {
    */
   public function build() {
     $popup_data = \Drupal::config('movie_review.popupconfig')->get('data');
+    $user = \Drupal::currentUser();
+    $username = $user->getAccountName();
+    $message = "Hello ".$username;
     foreach ($popup_data as $key => $popup_datum) {
       $image_id = $popup_datum['popup_image'][0];
       $image_file = \Drupal\file\Entity\File::load($image_id);
@@ -31,6 +34,7 @@ class PopupBlock extends BlockBase {
     }
     return array(
       '#data' => $popup_data,
+      '#message' => $message,
       '#theme' => 'popup_block'
     );
   }

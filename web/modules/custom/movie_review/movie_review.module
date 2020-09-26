@@ -14,7 +14,7 @@ use Drupal\Core\Form\FormStateInterface;
 function movie_review_theme() {
   return [
     'popup_block' => array(
-      'variables' => array('data' => NULL),
+      'variables' => array('data' => NULL,'message' => NULL),
       'template' => 'block--popup-block',
     )
    ];
